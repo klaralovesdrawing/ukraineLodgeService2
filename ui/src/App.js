@@ -3,9 +3,6 @@ import { Switch, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
-import AddTutorial from "./components/add-tutorial.component";
-import Tutorial from "./components/tutorial.component";
-import TutorialsList from "./components/tutorials-list.component";
 import LodgeList from "./components/lodge-list.component";
 import AddLodge from "./components/add-lodge.component";
 import Lodge from "./components/ldoge.component";
@@ -29,11 +26,6 @@ class App extends Component {
                 Unterkunft anlegen
                </Link>
               </li>
-                    <li className="nav-item">
-                        <Link to={"/tutorials"} className="nav-link">
-                            tutorials
-                        </Link>
-                    </li>
           </div>
         </nav>
 
@@ -42,9 +34,6 @@ class App extends Component {
            <Route exact path={["/", "/lodges"]} component={LodgeList} />
             <Route exact path="/add" component={AddLodge} />
             <Route path="/lodges/:id" component={Lodge} />
-            <Route exact path={["/", "/tutorials"]} component={TutorialsList} />
-            <Route exact path="/add" component={AddTutorial} />
-            <Route path="/tutorials/:id" component={Tutorial} />
           </Switch>
         </div>
       </div>
