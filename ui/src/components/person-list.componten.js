@@ -6,10 +6,12 @@ import { Link } from "react-router-dom";
 export default class PersonList extends Component {
   constructor(props) {
     super(props);
+    this.onChangeSearchPName = this.onChangeSearchPName.bind(this);
     this.retrievePerson = this.retrievePerson.bind(this);
     this.refreshList = this.refreshList.bind(this);
     this.setActivePerson = this.setActivePerson.bind(this);
     this.removeAllPerson = this.removeAllPerson.bind(this);
+    this.searchPName = this.searchPName.bind(this);
 
     this.state = {
       person: [],
@@ -22,7 +24,7 @@ export default class PersonList extends Component {
     this.retrievePerson();
   }
 
-  onChangeSearchRegion(e) {
+  onChangeSearchPName(e) {
     const searchName = e.target.value;
 
     this.setState({
@@ -67,7 +69,13 @@ export default class PersonList extends Component {
       .catch(e => {
         console.log(e);
       });
+  }
 
+  searchPName() {
+    this.setState({
+      currentLodge: null,
+      currentIndex: -1
+    });
 
     PersonDataService.findByName(this.state.searchName)
       .then(response => {
@@ -89,7 +97,22 @@ export default class PersonList extends Component {
       <div className="list row">
         <div className="col-md-8">
           <div className="input-group mb-3">
-            
+            <input
+                type="text"
+                className="form-control"
+                placeholder="Suche nach Name"
+                value={searchName}
+                onChange={this.onChangeSearchPName}
+              />
+            <div className="input-group-append">
+              <button
+                className="btn btn-outline-secondary"
+                type="button"
+                onClick={this.searchPName}
+              >
+                Suchen
+              </button>
+            </div>
           </div>
         </div>
         <div className="col-md-6">
