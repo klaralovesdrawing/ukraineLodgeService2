@@ -30,15 +30,15 @@ class App extends Component {
                </Link>
              </li>
              <li className="nav-item">
-              <Link to={"/addPerson"} className="nav-link">
-                Person anlegen
-               </Link>
-              </li>
-            <li className="nav-item">
               <Link to={"/person"} className="nav-link">
                 Personen
                </Link>
             </li>
+             <li className="nav-item">
+              <Link to={"/addPerson"} className="nav-link">
+                Person anlegen
+               </Link>
+              </li>
           </div>
         </nav>
 

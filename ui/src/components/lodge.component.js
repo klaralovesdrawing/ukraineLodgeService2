@@ -209,20 +209,25 @@ export default class Lodge extends Component {
 
                             <div className="form-group">
                                 <label htmlFor="Region">Region</label>
-                                <input
-                                    type="text"
+                               
+                                <select id="region"
                                     className="form-control"
-                                    id="region"
                                     value={currentLodge.region}
                                     onChange={this.onChangeRegion}
-                                />
+                                  >
+                                    <option value="Wien">Wien</option>
+                                    <option value="Niederösterreich">Niederösterreich</option>
+                                    <option value="Burgenland">Burgenland</option>
+                                    <option value="Oberösterreich">Oberösterreich</option>
+                                    <option value="Salzburg">Salzburg</option>
+                                    <option value="Steiermark">Steiermark</option>
+                                     <option value="Kärten">Kärnten</option>
+                                    <option value="Tirol">Tirol</option>
+                                    <option value="Vorarlberg">Vorarlberg</option>
+                                </select>
                             </div>
-
-
-
                         </form>
-                                               
-                                                
+                                                              
                         <button
                             className="badge badge-danger mr-2"
                             onClick={this.deleteLodge}

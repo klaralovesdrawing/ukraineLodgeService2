@@ -93,8 +93,8 @@ export default class Person extends Component {
       });
   }
 
-  deleteLodge() {    
-    PeopleDataService.delete(this.state.currentLodge.id)
+  deletePerson() {    
+    PeopleDataService.delete(this.state.currentPerson.id)
       .then(response => {
         console.log(response.data);
         this.props.history.push('/people')
