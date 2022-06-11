@@ -15,4 +15,5 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 db.lodges = require("./lodge.model.js")(sequelize, Sequelize);
+db.people = require("./people.model.js")(sequelize, Sequelize);
 module.exports = db;

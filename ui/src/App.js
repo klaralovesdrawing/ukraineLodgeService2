@@ -5,7 +5,9 @@ import "./App.css";
 
 import LodgeList from "./components/lodge-list.component";
 import AddLodge from "./components/add-lodge.component";
-import Lodge from "./components/ldoge.component";
+import Lodge from "./components/lodge.component";
+import Person from "./components/person.component";
+import AddPerson from "./components/add-person.component";
 
 class App extends Component {
   render() {
@@ -22,8 +24,13 @@ class App extends Component {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to={"/add"} className="nav-link">
+              <Link to={"/addLodge"} className="nav-link">
                 Unterkunft anlegen
+               </Link>
+             </li>
+             <li className="nav-item">
+              <Link to={"/addPerson"} className="nav-link">
+                Person anlegen
                </Link>
               </li>
           </div>
@@ -32,8 +39,10 @@ class App extends Component {
         <div className="container mt-3">
           <Switch>
            <Route exact path={["/", "/lodges"]} component={LodgeList} />
-            <Route exact path="/add" component={AddLodge} />
+            <Route exact path="/addLodge" component={AddLodge} />
             <Route path="/lodges/:id" component={Lodge} />
+            <Route path="/lodges/:id" component={Person} />
+            <Route exact path="/addPerson" component={AddPerson} />
           </Switch>
         </div>
       </div>
