@@ -126,7 +126,7 @@ export default class LodgeList extends Component {
           </div>
         </div>
         <div className="col-md-6">
-          <h4>Unterkuenfte</h4>
+          <h4>Unterk&uuml;nfte</h4>
 
           <ul className="list-group">
             {lodges &&
@@ -148,7 +148,7 @@ export default class LodgeList extends Component {
             className="m-3 btn btn-sm btn-danger"
             onClick={this.removeAllLodges}
           >
-            Alle loeschen
+            Alle l&ouml;schen
           </button>
         </div>
         <div className="col-md-6">
@@ -175,7 +175,7 @@ export default class LodgeList extends Component {
                  </div>
                 <div>
                    <label>
-                       <strong>Free Beds:</strong>
+                       <strong>Freie Betten:</strong>
                        </label>{" "}
                    {currentLodge.freeBeds}
                    </div>

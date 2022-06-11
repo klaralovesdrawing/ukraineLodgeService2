@@ -115,7 +115,7 @@ export default class PersonList extends Component {
             className="m-3 btn btn-sm btn-danger"
             onClick={this.removeAllPerson}
           >
-            Alle loeschen
+            Alle l&ouml;schen
           </button>
         </div>
         <div className="col-md-6">
