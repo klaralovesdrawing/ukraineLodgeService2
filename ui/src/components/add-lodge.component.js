@@ -161,14 +161,15 @@ export default class AddLodge extends Component {
                   <select id="region" required 
                   value={this.state.region}
                   onChange={this.onChangeRegion}
-                  name="region">
+                  name="region"
+                  >
                     <option value="Wien">Wien</option>
                     <option value="Niederösterreich">Niederösterreich</option>
                     <option value="Burgenland">Burgenland</option>
                     <option value="Oberösterreich">Oberösterreich</option>
                     <option value="Salzburg">Salzburg</option>
                     <option value="Steiermark">Steiermark</option>
-                    <option value="Kärten">Kärnten</option>
+                    <option value="Kärnten">Kärnten</option>
                     <option value="Tirol">Tirol</option>
                     <option value="Vorarlberg">Vorarlberg</option>
                   </select>

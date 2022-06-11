@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PeopleDataService from "../services/people.service";
+import LodgeDataService from "../services/lodge.service";
 
 export default class AddPerson extends Component {
   constructor(props) {
@@ -7,23 +8,37 @@ export default class AddPerson extends Component {
     this.onChangeName = this.onChangeName.bind(this);
     this.onChangeAge = this.onChangeAge.bind(this);
     this.onChangeAssignedLodge = this.onChangeAssignedLodge.bind(this);
+    this.retrieveLodges = this.retrieveLodges.bind(this);
     this.savePerson = this.savePerson.bind(this);
     this.newPerson = this.newPerson.bind(this);
-
     this.state = {
       id: null,
+      lodges: [],
       name: "",
       assignedLodge: "",
       age: null,
-
       submitted: false
     };
   }
-
+  componentDidMount() {
+   this.retrieveLodges();
+  }
   onChangeName(e) {
     this.setState({
       name: e.target.value
     });
+  }
+  retrieveLodges() {
+    LodgeDataService.getAll()
+      .then(response => {
+        this.setState({
+          lodges: response.data
+        });
+        console.log(response.data);
+      })
+      .catch(e => {
+        console.log(e);
+      });
   }
   
   onChangeAge(e) {
@@ -62,7 +77,6 @@ export default class AddPerson extends Component {
 
       });
   }
-
   newPerson() {
     this.setState({
       id: null,
@@ -73,6 +87,7 @@ export default class AddPerson extends Component {
   }
 
   render() {
+    const{lodges} = this.state;
     return (
       <div className="submit-form">
         {this.state.submitted ? (
@@ -112,15 +127,21 @@ export default class AddPerson extends Component {
 
             <div className="form-group">
               <label htmlFor="assignedLodge">Zugewiesene Unterkunft</label>
-              <input
-                type="text"
-                className="form-control"
-                id="assignedLodge"
-                required
-                value={this.state.assignedLodge}
-                onChange={this.onChangeAssignedLodge}
-                name="assignedLodge"
-              />
+              <select
+              className="form-control"
+              id="assignedLodge"
+              required
+              value={this.state.assignedLodge}
+              onChange={this.onChangeAssignedLodge}
+              name="assignedLodge"
+              >
+              <option value="">Unterkunft auswählen</option>
+              {lodges.map((lodge, key) => (
+            <option key={key} value={lodge.name}>
+              {lodge.name}
+            </option>
+          ))}
+              </select>
             </div>
 
             <button onClick={this.savePerson} className="btn btn-success">
