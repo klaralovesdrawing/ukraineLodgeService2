@@ -8,6 +8,7 @@ import AddLodge from "./components/add-lodge.component";
 import Lodge from "./components/lodge.component";
 import Person from "./components/person.component";
 import AddPerson from "./components/add-person.component";
+import PersonList from "./components/person-list.componten";
 
 class App extends Component {
   render() {
@@ -33,6 +34,11 @@ class App extends Component {
                 Person anlegen
                </Link>
               </li>
+            <li className="nav-item">
+              <Link to={"/person"} className="nav-link">
+                Personen
+               </Link>
+            </li>
           </div>
         </nav>
 
@@ -41,8 +47,9 @@ class App extends Component {
            <Route exact path={["/", "/lodges"]} component={LodgeList} />
             <Route exact path="/addLodge" component={AddLodge} />
             <Route path="/lodges/:id" component={Lodge} />
-            <Route path="/lodges/:id" component={Person} />
+            <Route path="/person/:id" component={Person} />
             <Route exact path="/addPerson" component={AddPerson} />
+            <Route exact path="/person" component={PersonList} />
           </Switch>
         </div>
       </div>
