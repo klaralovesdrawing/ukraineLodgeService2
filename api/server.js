@@ -1,4 +1,3 @@
-
 const express = require("express");
 const cors = require("cors");
 const app = express();
@@ -39,6 +38,8 @@ app.get("/", (req, res) => {
 });
 //require("./app/routes/tutorial.routes")(app);
 require("./app/routes/lodge.routes")(app);
+require("./app/routes/person.routes")(app);
+
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
