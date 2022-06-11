@@ -136,7 +136,7 @@ export default class PersonList extends Component {
 
           <button
             className="m-3 btn btn-sm btn-danger"
-            onClick={this.removeAllPerson}
+            onClick={() => {if (window.confirm("Sollen die Daten gelöscht werden?"))  this.removeAllPerson()}}
           >
             Alle l&ouml;schen
           </button>

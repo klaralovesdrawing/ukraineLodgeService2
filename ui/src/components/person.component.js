@@ -52,7 +52,7 @@ export default class Person extends Component {
     }));
     }
 
-
+    
     onChangeAssignedLodge(e) {
         const assignedLodge = e.target.value;
 
@@ -124,7 +124,7 @@ export default class Person extends Component {
                                 />
                             </div>
                             <div className="form-group">
-                                <label htmlFor="age">age</label>
+                                <label htmlFor="age">Alter</label>
                                 <input
                                     type="number"
                                     className="form-control"
@@ -148,9 +148,9 @@ export default class Person extends Component {
                                                 
                         <button
                             className="badge badge-danger mr-2"
-                            onClick={this.deletePerson}
+                            onClick={() => {if (window.confirm("Sollen die Daten gelöscht werden"))  this.deletePerson()}}
                         >
-                            Delete
+                            L&ouml;schen
                         </button>
 
                         <button

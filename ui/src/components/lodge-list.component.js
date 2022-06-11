@@ -147,7 +147,7 @@ export default class LodgeList extends Component {
 
           <button
             className="m-3 btn btn-sm btn-danger"
-            onClick={this.removeAllLodges}
+            onClick={() => {if (window.confirm("Sollen die Daten gelöscht werden"))  this.removeAllLodges()}}
           >
             Alle l&ouml;schen
           </button>

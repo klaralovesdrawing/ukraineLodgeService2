@@ -230,9 +230,9 @@ export default class Lodge extends Component {
                                                               
                         <button
                             className="badge badge-danger mr-2"
-                            onClick={this.deleteLodge}
+                            onClick={() => {if (window.confirm("Sollen die Daten gelöscht werden"))  this.deleteLodge()}}
                         >
-                            Delete
+                            L&ouml;schen
                         </button>
 
                         <button
