@@ -65,8 +65,8 @@ exports.create = (req, res) => {
 };
 
 exports.findAll = (req, res) => {
-    const name = req.query.name;
-    var condition = name ? { name: { [Op.like]: `%${name}%` } } : null;
+    const region = req.query.region;
+    var condition = region ? { region: { [Op.like]: `%${region}%` } } : null;
     Lodge.findAll({ where: condition })
         .then(data => {
             res.send(data);

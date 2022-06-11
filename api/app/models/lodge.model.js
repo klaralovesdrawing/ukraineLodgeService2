@@ -20,7 +20,6 @@ module.exports = (sequelize, Sequelize) => {
         region: {
             type: Sequelize.STRING
         }
-
     });
     return Lodge;
 };

@@ -17,8 +17,6 @@ export default class AddLodge extends Component {
       id: null,
       name: "",
       nrOfBeds: null, 
-      //nrOfPersons: null,
-      //freeBeds: nrOfBeds,
       type: "",
       region: "",
 
@@ -60,7 +58,7 @@ export default class AddLodge extends Component {
         this.setState({
             region: e.target.value
         });
-    }
+    } 
 
   saveLodge() {
     var data = {
@@ -145,33 +143,6 @@ export default class AddLodge extends Component {
               />
             </div>
 
-
-             {/*<div className="form-group">*/}
-             {/*   <label htmlFor="nrOfPersons">Anzahl zugewiesener Personen</label>*/}
-             {/*    <input*/}
-             {/*       type="number"*/}
-             {/*       className="form-control"*/}
-             {/*       id="nrOfPersons"*/}
-             {/*       required*/}
-             {/*       value={this.state.nrOfPersons}*/}
-             {/*       onChange={this.onChangeNrOfPersons}*/}
-             {/*       name="nrOfPersons"*/}
-             {/*    />*/}
-             {/* </div>*/}
-
-              {/*<div className="form-group">*/}
-              {/*   <label htmlFor="freeBeds">Freie Betten</label>*/}
-              {/*    <input*/}
-              {/*       type="number"*/}
-              {/*       className="form-control"*/}
-              {/*       id="freeBeds"*/}
-              {/*       required*/}
-              {/*       value={this.state.freeBeds}*/}
-              {/*       onChange={this.onChangefreeBeds}*/}
-              {/*        name="freeBeds"*/}
-              {/*    />*/}
-              {/* </div>*/}
-
               <div className="form-group">
                <label htmlFor="type">Art der Unterkunft</label>
                 <input
@@ -187,18 +158,21 @@ export default class AddLodge extends Component {
 
                <div className="form-group">
                 <label htmlFor="region">Region</label>
-                   <input
-                    type="text"
-                     className="form-control"
-                      id="region"
-                      required
-                      value={this.state.region}
-                      onChange={this.onChangeRegion}
-                      name="region"
-                   />
+                  <select id="region" required 
+                  value={this.state.region}
+                  onChange={this.onChangeRegion}
+                  name="region">
+                    <option value="Wien">Wien</option>
+                    <option value="Niederösterreich">Niederösterreich</option>
+                    <option value="Burgenland">Burgenland</option>
+                    <option value="Oberösterreich">Oberösterreich</option>
+                    <option value="Salzburg">Salzburg</option>
+                    <option value="Steiermark">Steiermark</option>
+                    <option value="Kärten">Kärnten</option>
+                    <option value="Tirol">Tirol</option>
+                    <option value="Vorarlberg">Vorarlberg</option>
+                  </select>
                  </div>
-
-
             <button onClick={this.saveLodge} className="btn btn-success">
               Submit
             </button>

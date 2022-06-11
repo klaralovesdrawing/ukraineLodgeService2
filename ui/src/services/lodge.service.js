@@ -30,7 +30,14 @@ class LodgeDataService {
   }
 
   findByName(name) {
-    return http.get(`/lodges?name=${name}`);
+    return http.get(`/lodges?region=${name}`);
+  }
+
+  findByRegion(region) {
+    console.log("infindregion");
+    console.log(region);
+    console.log(http.get(`/lodges?region`));
+    return http.get(`/lodges?region=${region}`);
   }
 }
 

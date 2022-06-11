@@ -6,12 +6,12 @@ import { Link } from "react-router-dom";
 export default class LodgeList extends Component {
   constructor(props) {
     super(props);
-    this.onChangeSearchName = this.onChangeSearchName.bind(this);
+    this.onChangeSearchRegion = this.onChangeSearchRegion.bind(this);
     this.retrieveLodges = this.retrieveLodges.bind(this);
     this.refreshList = this.refreshList.bind(this);
     this.setActiveLodge = this.setActiveLodge.bind(this);
     this.removeAllLodges = this.removeAllLodges.bind(this);
-    this.searchName = this.searchName.bind(this);
+    this.searchRegion = this.searchRegion.bind(this);
 
     this.state = {
       lodges: [],
@@ -20,12 +20,11 @@ export default class LodgeList extends Component {
       searchName: ""
     };
   }
-
   componentDidMount() {
     this.retrieveLodges();
   }
 
-  onChangeSearchName(e) {
+  onChangeSearchRegion(e) {
     const searchName = e.target.value;
 
     this.setState({
@@ -72,7 +71,7 @@ export default class LodgeList extends Component {
       });
   }
 
-  searchName() {
+  searchRegion() {
     this.setState({
       currentLodge: null,
       currentIndex: -1
@@ -98,18 +97,28 @@ export default class LodgeList extends Component {
       <div className="list row">
         <div className="col-md-8">
           <div className="input-group mb-3">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Suche nach Name"
-              value={searchName}
-              onChange={this.onChangeSearchName}
-            />
+            <select
+            className="form-control"
+            placeholder="Suche nach Name"
+            value={searchName}
+            onChange={this.onChangeSearchRegion}
+            >
+              <option value="Wien">Wien</option>
+                    <option value="Niederösterreich">Niederösterreich</option>
+                    <option value="Burgenland">Burgenland</option>
+                    <option value="Oberösterreich">Oberösterreich</option>
+                    <option value="Salzburg">Salzburg</option>
+                    <option value="Steiermark">Steiermark</option>
+                    <option value="Kärnten">Kärnten</option>
+                    <option value="Tirol">Tirol</option>
+                    <option value="Vorarlberg">Vorarlberg</option>
+
+            </select>
             <div className="input-group-append">
               <button
                 className="btn btn-outline-secondary"
                 type="button"
-                onClick={this.searchName}
+                onClick={this.searchRegion}
               >
                 Search
               </button>
