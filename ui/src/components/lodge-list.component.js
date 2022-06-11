@@ -99,10 +99,11 @@ export default class LodgeList extends Component {
           <div className="input-group mb-3">
             <select
             className="form-control"
-            placeholder="Suche nach Name"
+            placeholder="Suche nach Region"
             value={searchName}
             onChange={this.onChangeSearchRegion}
             >
+              <option value=""> </option>
               <option value="Wien">Wien</option>
                     <option value="Niederösterreich">Niederösterreich</option>
                     <option value="Burgenland">Burgenland</option>
@@ -120,7 +121,7 @@ export default class LodgeList extends Component {
                 type="button"
                 onClick={this.searchRegion}
               >
-                Search
+                Suchen
               </button>
             </div>
           </div>
