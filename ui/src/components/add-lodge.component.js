@@ -159,6 +159,7 @@ export default class AddLodge extends Component {
                <div className="form-group">
                 <label htmlFor="region">Region</label>
                   <select id="region" required 
+                  className="form-control"
                   value={this.state.region}
                   onChange={this.onChangeRegion}
                   name="region"

@@ -209,7 +209,6 @@ export default class Lodge extends Component {
 
                             <div className="form-group">
                                 <label htmlFor="Region">Region</label>
-                               
                                 <select id="region"
                                     className="form-control"
                                     value={currentLodge.region}
@@ -221,7 +220,7 @@ export default class Lodge extends Component {
                                     <option value="Oberösterreich">Oberösterreich</option>
                                     <option value="Salzburg">Salzburg</option>
                                     <option value="Steiermark">Steiermark</option>
-                                     <option value="Kärten">Kärnten</option>
+                                    <option value="Kärten">Kärnten</option>
                                     <option value="Tirol">Tirol</option>
                                     <option value="Vorarlberg">Vorarlberg</option>
                                 </select>
