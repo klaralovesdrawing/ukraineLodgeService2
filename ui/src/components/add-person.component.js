@@ -77,10 +77,10 @@ export default class AddPerson extends Component {
       <div className="submit-form">
         {this.state.submitted ? (
           <div>
-            <h4>You submitted successfully!</h4>
-            <button className="btn btn-success" onClick={this.newPerson}>
-              Add
-            </button>
+            <h4>Die Person wurde erfolgreich übermittelt!</h4>
+            <form method="get" action="/">
+              <button className= "btn btn-success" type="submit">Zurück zur Übersicht</button>
+            </form>
           </div>
         ) : (
           <div> 
