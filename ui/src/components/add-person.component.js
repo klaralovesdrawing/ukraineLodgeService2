@@ -53,7 +53,7 @@ export default class AddPerson extends Component {
           age: response.data.age,
           assignedLodge: response.data.assignedLodge,
 
-          submitted: false
+          submitted: true
         });
         console.log(response.data);
       })
