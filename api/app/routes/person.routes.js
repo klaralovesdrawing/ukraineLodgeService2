@@ -1,5 +1,5 @@
 module.exports = app => {
-    const lodge = require("../controllers/person.controller");
+    const person = require("../controllers/person.controller");
     var router = require("express").Router();
     // Create a new person
     router.post("/", person.create);

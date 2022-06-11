@@ -30,6 +30,8 @@ app.use(express.urlencoded({ extended: true }));
 
 
 const db = require("./app/models");
+require("./app/routes/lodge.routes")(app);
+require("./app/routes/person.routes")(app); 
 db.sequelize.sync();
 
 
@@ -37,8 +39,8 @@ app.get("/", (req, res) => {
 	res.json({ message: "Welcome to the Ukraine Lodge Service" });
 });
 //require("./app/routes/tutorial.routes")(app);
-require("./app/routes/lodge.routes")(app);
-require("./app/routes/person.routes")(app);
+
+
 
 
 // set port, listen for requests
@@ -60,4 +62,4 @@ app.use((req, res, next) => {
 
 app.listen(PORT, () => {
 	console.log(`Server is running on port ${PORT}.`);
-});
+})
