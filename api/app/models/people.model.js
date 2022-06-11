@@ -1,16 +1,17 @@
 module.exports = (sequelize, Sequelize) => {
-    const Lodge = sequelize.define("person", {
-      
+    const Person = sequelize.define("person", {
+
         name: {
             type: Sequelize.STRING
         },
 
-        lodgeAssignment: {
-            type: Sequelize.STRING
-        },
         age: {
             type: Sequelize.INTEGER
+        },
+
+        assignedLodge: {
+            type: Sequelize.STRING
         }
     });
-    return Lodge;
+    return Person;
 };
