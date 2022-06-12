@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import PeopleDataService from "../services/people.service";
 import LodgeDataService from "../services/lodge.service";
+import Lodge from "./lodge.component";
+
 
 export default class AddPerson extends Component {
   constructor(props) {
@@ -51,6 +53,7 @@ export default class AddPerson extends Component {
     this.setState({
       assignedLodge: e.target.value
     });
+  
    }
 
   savePerson() {
@@ -58,6 +61,7 @@ export default class AddPerson extends Component {
       name: this.state.name,
       age: this.state.age,
       assignedLodge: this.state.assignedLodge
+
     };
 
     PeopleDataService.create(data)
@@ -67,10 +71,8 @@ export default class AddPerson extends Component {
           name: response.data.name,
           age: response.data.age,
           assignedLodge: response.data.assignedLodge,
-
           submitted: true
         });
-        console.log(response.data);
       })
       .catch(e => {
           console.log(e);
@@ -137,13 +139,13 @@ export default class AddPerson extends Component {
               >
               <option value="">Unterkunft auswählen</option>
               {lodges.map((lodge, key) => (
-            <option key={key} value={lodge.name}>
+              <option key={key} value={lodge.id}>
               {lodge.name}
             </option>
           ))}
               </select>
             </div>
-
+           
             <button onClick={this.savePerson} className="btn btn-success">
               Submit
             </button>

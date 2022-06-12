@@ -20,7 +20,7 @@ export default class Lodge extends Component {
         id: null,
         name: "",
         nrOfBeds: null,
-        nrOfPersons: null,
+        nrOfPersons: 0,
         freeBeds: 0,
         type: "",
         region: ""
@@ -220,7 +220,7 @@ export default class Lodge extends Component {
                                     <option value="Oberösterreich">Oberösterreich</option>
                                     <option value="Salzburg">Salzburg</option>
                                     <option value="Steiermark">Steiermark</option>
-                                    <option value="Kärten">Kärnten</option>
+                                    <option value="Kärnten">Kärnten</option>
                                     <option value="Tirol">Tirol</option>
                                     <option value="Vorarlberg">Vorarlberg</option>
                                 </select>
